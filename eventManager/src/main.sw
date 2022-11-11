@@ -49,7 +49,7 @@ impl eventManager for Contract {
 
         storage.events.insert(campaign_id, newEvent);
 
-        let mut selectedEvent = storage.events.get(storage.event_id_counter);
+        let selectedEvent = storage.events.get(storage.event_id_counter);
 
         storage.event_id_counter += 1;
 
