@@ -15,7 +15,6 @@ use std::{
     call_frames::msg_asset_id,
     constants::BASE_ASSET_ID,
     context::msg_amount,
-    context::this_balance,
     contract_id::ContractId,
     identity::Identity,
     logging::log,
