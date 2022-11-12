@@ -18,8 +18,6 @@ Ensure you have `Rust`, `fuelup` and fuelup toolchains installed.
 
 ### Create a Wallet
 
-## Create A Wallet (Again)
-
 In order to interact with the fuel network, an wallet address needs to be created so as to submit signed transactions with enough funds to cover network fees.
 
 The Fuel TS SDK don't currently support Wallet integrations, requiring instead to use a non-safe wallet inside the WebApp using a privateKey.
@@ -31,3 +29,10 @@ The Fuel TS SDK don't currently support Wallet integrations, requiring instead t
 `cd frontend`
 
 `npm run create-wallet`
+
+Copy the private key. Create a .env.local file from .env.example. Add the private key to it.
+
+`cp .env.example .env.local`
+
+> **Note**
+> You will need to deploy the contract in a network: local or testnet. Take the contract adddress and it to the .env.local file
