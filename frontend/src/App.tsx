@@ -11,7 +11,7 @@ const eventManagerContractAddress = process.env.REACT_APP_EVENT_MANAGER_ADDRESS 
 const walletPK = process.env.REACT_APP_WALLET_PRIVATE_KEY as BytesLike
 
 // testnet
-const rcpProvider = "https://node-beta-1.fuel.network/graphql"
+const rcpProvider = process.env.REACT_APP_RPC_PROVIDER
 
 // create a Wallet instance from given privateKey
 const wallet = Wallet.fromPrivateKey(walletPK, rcpProvider)
