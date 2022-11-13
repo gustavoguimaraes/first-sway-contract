@@ -32,6 +32,7 @@ pub enum InvalidRSVPError {
     IncorrectAssetId: (),
     NotEnoughTokens: (),
     InvalidEventID: (),
+    ReachedMaxCapacity: (),
 }
 
 impl eventManager for Contract {
@@ -75,6 +76,9 @@ impl eventManager for Contract {
 
         require(amount >= selectedEvent.deposit, InvalidRSVPError::NotEnoughTokens);
         __log(2);
+
+        require(selectedEvent.numOfRSVPs + 1 <= selectedEvent.maxCapacity, InvalidRSVPError::ReachedMaxCapacity);
+        log(3);
 
         // send payout
         transfer(selectedEvent.deposit, asset_id, selectedEvent.owner);
